@@ -1,0 +1,750 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap");
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+  
+/* Theme Variables */
+$theme: #06A3DA; // theme color
+$theme-secondary: #0b5ed7; // Secondary theme color
+$white: #FFFFFF; // White color
+$dark: #212529; // Dark color
+
+/* Background Colors */
+.bg-theme {
+    background: $theme;
+}
+.bg-secondary-theme {
+    background: $theme-secondary;
+}
+
+/* Text Colors */
+.text-theme {
+    color: $theme;
+}
+.text-secondary-theme {
+    color: $theme-secondary;
+}
+
+/* Text Alignment */
+.text-justify {
+    text-align: justify;
+}
+.text-last-left {
+    text-align-last: left;
+}
+.text-last-center {
+    text-align-last: center;
+}
+.text-last-right {
+    text-align-last: right;
+}
+
+/* Letter-Spacing */
+.ls-1 {
+    letter-spacing: 0.1rem;
+}
+
+.ls-2 {
+    letter-spacing: 0.2rem;
+}
+
+.ls-3 {
+    letter-spacing: 0.3rem;
+}
+
+.ls-4 {
+    letter-spacing: 0.4rem;
+}
+
+.ls-5 {
+    letter-spacing: 0.5rem;
+}
+
+/* Line-Height */
+.lh-1 {
+    line-height: 1;
+}
+
+.lh-1-25 {
+    line-height: 1.25;
+}
+
+.lh-1-5 {
+    line-height: 1.5;
+}
+
+.lh-1-75 {
+    line-height: 1.75;
+}
+
+.lh-2 {
+    line-height: 2;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+}
+
+.btn-theme {
+    color: $white;
+    background-color: $theme;
+    border-color: $theme;
+
+    &:hover {
+        color: $white;
+        background-color: $theme-secondary;
+        border-color: $theme-secondary;
+    }
+}
+
+.btn-square, .btn-sm-square, .btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+/* Back To Top Button */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 20px;
+    z-index: 99;
+}
+
+/* Forms */
+.form-control {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+/* Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    background: $theme;
+    margin: 100px auto;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+/* Keyframes */
+@-webkit-keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px);
+    }
+    50% {
+        transform: perspective(120px) rotateY(180deg);
+    }
+    100% {
+        transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+/* Spinner Visibility */
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+    z-index: 99999;
+
+    &.show {
+        transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* Topbar */
+.navbar-custom-class {
+    height: 45px;
+}
+
+/* Section Title */
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100px; /* Adjust Bottom line */
+        height: 3px;
+        bottom: 0;
+        left: 0; /* Start from the left */
+        background: $theme;
+        border-radius: 2px;
+    }
+
+    &.text-center::before {
+        left: 50%; /* Center it when the content is centered */
+        transform: translateX(-50%);
+    }
+}
+
+/* Hover Effects */
+
+/* Fill Hover Effect */
+.hover-fill {
+    transition: 0.5s;
+    box-shadow: inset 0 0 0 50px transparent;
+    &:hover {
+        box-shadow: inset 0 0 0 0 $theme;
+    }
+}
+/* Zoom In Effect */
+.hover-zoom {
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.06);
+    }
+}
+
+/* Navbar */
+.navbar {
+    .navbar-brand img {
+        width: 65px;
+        height: auto;
+        max-width: 100%;
+        pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
+    }
+
+    .navbar-nav {
+        .nav-link {
+            position: relative;
+            margin-left: 25px;
+            padding: 35px 0;
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            outline: none;
+            transition: .5s;
+
+            &:hover,
+            &.active {
+                color: $theme;
+            }
+        }
+        .show > .nav-link {
+            color: $theme;
+        }
+    }
+
+    .navbar-toggler {
+        color: $theme !important;
+        border-color: $theme !important;
+    }
+
+    .dropdown-menu {
+        padding: 0; // Setting padding to 0
+        border-radius: 0;
+
+        .dropdown-item {
+            background-color: $theme;
+            color: $white;
+            border-bottom: 1px solid $white;
+            text-align: center;
+            padding: 10px;
+            transition: 0.5s;
+
+            &:hover {
+                background-color: $theme-secondary; // Set background color to theme color on hover
+                color: $white; // Change text color for better readability on the background color
+            }
+        
+            &.active, &:active {
+                color: $white;
+                background-color: $theme-secondary;
+            }
+        }
+    }
+}
+
+.sticky-top.navbar {
+    .navbar-nav {
+        .nav-link {
+            padding: 20px 0;
+            color: $dark;
+
+            &:hover,
+            &.active {
+                color: $theme;
+            }
+        }
+    }
+}
+
+/* Footer */
+footer {
+    .navbar-brand img {
+        width: 100px;
+        height: auto;
+        max-width: 100%;
+        pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
+    }
+
+    .footer-contact .form-control {
+        width: 50%;
+    }
+
+    .link-animated {
+        a {
+            transition: .5s;
+            &:hover {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+/* Landing Page Start */
+
+/* Carousel */
+.carousel {
+    .carousel-inner {
+        .carousel-item {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 800px; // Adjust as needed
+                object-fit: cover;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(9, 30, 62, 0.8); // Dark semi-transparent background
+                z-index: 1; // Ensures the overlay is above the image
+            }
+
+            .carousel-caption {
+                position: absolute;
+                top: 50%;
+                left: 50%; // 50% centers the carousel caption by default (adjust percentage to move left or right)
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 2; // Ensure the caption is above the overlay
+                width: 50%; // Ensure it scales well on different screen sizes
+                padding: 0 15px; // Add some padding to ensure content doesn't touch edges
+
+                h1 {
+                    font-size: 2.8rem;
+                }
+
+                p {
+                    font-size: 1.25rem; // You can adjust the font size for better readability
+                }
+            }
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        z-index: auto;
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5); // Optional: Semi-transparent background for icons
+        }
+    }
+}
+
+/* Banner */
+.banner {
+    background-size: cover;
+    margin-bottom: 90px;
+}
+
+/* Service */
+.service-item {
+    position: relative;
+    height: 300px;
+    padding: 0 30px;
+    transition: bottom .5s, opacity .5s; // Specify properties to transition
+
+    .service-icon {
+        margin-bottom: 30px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $theme;
+        border-radius: 2px;
+        transform: rotate(-45deg);
+
+        .text-white {
+            transform: rotate(45deg);
+        }
+    }
+
+    a.btn {
+        position: absolute;
+        width: 60px;
+        bottom: -48px;
+        left: 50%;
+        margin-left: -30px;
+        opacity: 0;
+        transition: bottom .5s, opacity .5s; // Ensure button transition matches
+    }
+
+    &:hover a.btn {
+        bottom: -24px;
+        opacity: 1;
+    }
+}
+
+/* Gallery */
+.gallery {
+    .box {
+        width: 350px;
+        overflow: hidden;
+        .slide-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            box-sizing: border-box;
+        }
+    }
+}
+
+/* Team */
+.team-item {
+    transition: .5s;
+
+    .team-social {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+
+        a.btn {
+            position: relative;
+            margin: 0 3px;
+            margin-top: 100px;
+            opacity: 0;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 30px #DDDDDD;
+    }
+
+    &:hover .team-social {
+        background: rgba(9, 30, 62, .7);
+    }
+
+    &:hover .team-social a.btn {
+        opacity: 1;
+        margin-top: 0;
+        transition: .3s;
+    }
+
+    &:hover .team-social a.btn:nth-child(2) {
+        transition-delay: .05s;
+    }
+
+    &:hover .team-social a.btn:nth-child(3) {
+        transition-delay: .1s;
+    }
+
+    &:hover .team-social a.btn:nth-child(4) {
+        transition-delay: .15s;
+    }
+}
+
+/* Testimonial */
+.testimonial-carousel{
+    .owl-dots {
+        margin-top: 15px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .owl-dot {
+        position: relative;
+        display: inline-block;
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+        background: #DDDDDD;
+        border-radius: 2px;
+        transition: .5s;
+        &.active {
+            width: 30px;
+            background: $theme;
+        }
+    }
+    .owl-item.center {
+        position: relative;
+        z-index: 1;
+    }
+    .owl-item .testimonial-item {
+        transition: .5s;
+    }
+    .owl-item.center .testimonial-item {
+        background: #FFFFFF;
+        box-shadow: 0 0 20px #DDDDDD;
+    }
+}
+  
+/* Media Queries */
+
+/* Smartphones and Tablets */
+@media (max-width: 991.98px) {
+    /* Sticky Navbar */
+    .sticky-top.navbar {
+        position: relative;
+        background: #FFFFFF;
+
+        .navbar-nav {
+            .nav-link {
+                padding: 10px 0;
+                color: $dark;
+            }
+        }
+    }
+
+    /* Navbar */
+    .navbar {
+        /* Navbar Brand */
+        .navbar-brand {
+            img {
+                width: 60px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        /* Navbar Link */
+        .navbar-nav {
+            .nav-link {
+                &,
+                &.show {
+                    padding: 10px 0;
+                    color: $dark;
+                }
+            }
+        }
+    }
+
+    /* Carousel */
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    height: 600px; // Adjust height for smaller screens
+                }
+
+                .carousel-caption {
+                    width: 90%; // Make the caption wider on smaller screens
+                    min-height: 350px;
+                    left: 50%;
+                    padding: 0 10px; // Adjust padding to fit smaller screens
+
+                    h1 {
+                        font-size: 1.5rem; // Smaller font size for titles
+                    }
+
+                    p {
+                        font-size: 1rem; // Smaller font size for paragraphs
+                        line-height: 1.5; // Adjust line height for readability
+                    }
+                }
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none; // Hide carousel controls on mobile
+        }
+    }
+}
+
+/* Desktops Only */
+@media (min-width: 992px) {
+    /* Comment out or remove the sticky navbar code below if you want to remove the sticky behavior from the navbar. */
+    .sticky-top.navbar {
+        position: fixed;
+        width: 100%;
+        background: #FFFFFF;
+    }
+
+    /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+    }
+
+   /* Gallery */
+    .gallery {
+        .box {
+            margin: -15px;
+        }
+    }
+
+    /* Facts Counter */
+    .facts {
+        position: relative;
+        margin-top: -75px;
+        z-index: 1;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 0;
+    }
+}
+
+/* Theme Switcher (Dark Mode) */
+/* Dark Theme Variables */
+$dark-bg-color: #121212; // Background color for dark mode
+$dark-text-color: #ffffff; // Text color for dark mode
+$dark-light-bg-color: #1e1e1e; // Light background color for dark mode
+$dark-shadow-color: #333333; // Darker shadow color for dark mode
+
+body.dark-mode {
+  /* Override styles for dark mode */
+  background-color: $dark-bg-color;
+  color: $dark-text-color;
+
+  .bg-white {
+    background-color: $dark-bg-color !important;
+  }
+
+  .text-dark {
+    color: $dark-text-color !important;
+  }
+
+  .bg-light {
+    background-color: $dark-light-bg-color !important;
+  }
+
+  .shadow {
+    box-shadow: 0 0 30px $dark-shadow-color !important; // Darker shadow color for dark mode
+  }
+
+  .btn-outline-dark {
+    color: $dark-text-color !important;
+    border-color: $dark-text-color !important;
+  }
+
+  /* Common Section Styles for Dark Mode */
+  .navbar,
+  footer,
+  .carousel-caption,
+  .testimonial-item,
+  .service-item,
+  .gallery .box,
+  .team-item,
+  .blog-item {
+    background-color: $dark-bg-color;
+    color: $dark-text-color;
+  }
+
+  /* Testimonial Carousel for Dark Mode */
+  .testimonial-carousel {
+    .owl-item.center .testimonial-item {
+      background-color: $dark-bg-color !important;
+      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
+    }
+  }
+
+  /* Team Section for Dark Mode */
+  .team-item {
+    &:hover {
+      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
+    }
+  }
+
+  /* Form Controls for Dark Mode */
+  .form-control,
+  .form-select {
+    background-color: $dark-bg-color;
+    color: $dark-text-color;
+    
+    &::placeholder {
+      color: $dark-text-color; // Placeholder text color for dark mode
+    }
+  }
+
+  /* Blog Pagination for Dark Mode */
+  .page-link {
+    background-color: $dark-bg-color !important;
+    
+    &:active {
+      background-color: #06A3DA; // Highlight color for active state
+    }
+  }
+
+  /* Sticky Top Navbar for Dark Mode */
+  .sticky-top.navbar {
+    .navbar-nav {
+      .nav-link {
+        color: $dark-text-color;
+      }
+    }
+  }
+
+  /* Responsive Styles for Dark Mode (Smartphones and Tablets) */
+  @media (max-width: 991.98px) {
+    .navbar {
+      .navbar-nav {
+        .nav-link {
+          &,
+          &.show {
+            color: $dark-text-color;
+          }
+        }
+      }
+    }
+  }
+}
