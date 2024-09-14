@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+    font-family: "Manrope", sans-serif; /* Set "Manrope" as the default font family */
 }
+
   
 /* Theme Variables */
-$theme: #06A3DA; // theme color
-$theme-secondary: #0b5ed7; // Secondary theme color
+$theme: #28a745; // theme color
+$theme-secondary: #218838; // Secondary theme color
 $white: #FFFFFF; // White color
 $dark: #212529; // Dark color
 
@@ -129,6 +130,27 @@ a {
     height: 48px;
 }
 
+/* Border Radius Classes */
+.border-radius-sm {
+    border-radius: 4px; /* Small border radius */
+}
+
+.border-radius-md {
+    border-radius: 8px; /* Medium border radius */
+}
+
+.border-radius-lg {
+    border-radius: 12px; /* Large border radius */
+}
+
+.border-radius-xl {
+    border-radius: 16px; /* Extra large border radius */
+}
+
+.border-radius-circle {
+    border-radius: 50%; /* Full circle for round elements */
+}
+
 /* Back To Top Button */
 .back-to-top {
     position: fixed;
@@ -241,7 +263,7 @@ a {
 /* Navbar */
 .navbar {
     .navbar-brand img {
-        width: 65px;
+        width: 150px;
         height: auto;
         max-width: 100%;
         pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -252,7 +274,7 @@ a {
             position: relative;
             margin-left: 25px;
             padding: 35px 0;
-            color: $white;
+            color: $dark;
             font-size: 18px;
             font-weight: 600;
             outline: none;
@@ -337,7 +359,8 @@ footer {
 
 /* Landing Page Start */
 
-/* Carousel */
+/* Carousel Styles */
+/* Carousel Styles */
 .carousel {
     .carousel-inner {
         .carousel-item {
@@ -345,7 +368,7 @@ footer {
 
             img {
                 width: 100%;
-                height: 800px; // Adjust as needed
+                height: 100vh; // Full height for a striking visual effect
                 object-fit: cover;
             }
 
@@ -355,40 +378,193 @@ footer {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(9, 30, 62, 0.8); // Dark semi-transparent background
-                z-index: 1; // Ensures the overlay is above the image
+                background: rgba(0, 0, 0, 0.5); // Dark semi-transparent overlay
+                z-index: 1; // Ensures the overlay is above the image but below the text
             }
 
             .carousel-caption {
                 position: absolute;
                 top: 50%;
-                left: 50%; // 50% centers the carousel caption by default (adjust percentage to move left or right)
-                transform: translate(-50%, -50%);
-                text-align: center;
+                left: 5%; // Aligns content to the left
+                transform: translateY(-50%);
                 z-index: 2; // Ensure the caption is above the overlay
-                width: 50%; // Ensure it scales well on different screen sizes
-                padding: 0 15px; // Add some padding to ensure content doesn't touch edges
-
-                h1 {
-                    font-size: 2.8rem;
-                }
+                max-width: 40%; // Limit the width of the caption
 
                 p {
-                    font-size: 1.25rem; // You can adjust the font size for better readability
+                    font-size: 1.2rem; // Adjust font size for small text
+                    letter-spacing: 1px;
+                }
+
+                h1 {
+                    font-size: 3.5rem; // Larger font size for the main heading
+                    line-height: 1.2;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                }
+
+                .btn {
+                    margin-top: 20px;
+                    background-color: #28a745;
+                    border: none;
+                    &:hover {
+                        background-color: #218838;
+                    }
                 }
             }
         }
     }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-        z-index: auto;
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5); // Optional: Semi-transparent background for icons
+    .custom-control {
+        position: absolute;
+        right: 30px; // Align both buttons to the right side
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.2); // Semi-transparent background
+        border: 2px solid #fff; // White border for circular design
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 5; // Ensure the buttons are above other elements
+    
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.5); // Lighter background on hover
         }
     }
+    
+    .carousel-control-prev {
+        top: calc(50% - 35px); // Position the "prev" button above the center
+        right: 30px; // Align to the right side
+        left: auto; // Override default left position
+    }
+    
+    .carousel-control-next {
+        top: calc(50% + 35px); // Position the "next" button below the center
+        right: 30px; // Align to the right side
+        left: auto; // Override default left position
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 12px 12px; // Adjust the size of the icons
+        background-color: transparent; // Remove any background from the icons
+    }
+    
 }
+
+.feature {
+    /* Icon Flip Effect */
+    .icon-box {
+        perspective: 1000px; /* Enable 3D space for flipping effect */
+        position: absolute;
+        bottom: -50px; /* Adjust to move the icon to the bottom edge */
+    }
+    
+    .icon-flip {
+        width: 80px;
+        height: 80px;
+        position: relative;
+    }
+
+    .icon-flip-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+
+    .icon-flip:hover .icon-flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .icon-front,
+    .icon-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    /* Front Icon */
+    .icon-front {
+        transform: rotateY(0deg);
+    }
+
+    /* Back Icon */
+    .icon-back {
+        transform: rotateY(180deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.introduction-section {
+  .container {
+    position: relative;
+  }
+
+  /* Main Image Section */
+  .main-image {
+    position: relative;
+    z-index: 1; /* Base layer for the main image */
+
+    .main-img {
+      width: 100%;
+      height: auto;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative; /* Ensure relative positioning for child elements */
+    }
+  }
+
+  /* Right Content Section */
+  p {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-family: "Manrope", sans-serif;
+    color: #333;
+  }
+
+  h4 {
+    font-family: "Manrope", sans-serif;
+    color: #28a745; /* Green color */
+  }
+
+  .icon-feature {
+    font-size: 1.1rem;
+    color: #666;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  ul {
+    font-family: "Manrope", sans-serif;
+    li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .btn {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1rem;
+    border-radius: 4px;
+  }
+}
+
+
 
 /* Banner */
 .banner {
@@ -584,8 +760,9 @@ footer {
                 .carousel-caption {
                     width: 90%; // Make the caption wider on smaller screens
                     min-height: 350px;
-                    left: 50%;
+                    left: 0%;
                     padding: 0 10px; // Adjust padding to fit smaller screens
+                    max-width: 100%;
 
                     h1 {
                         font-size: 1.5rem; // Smaller font size for titles
@@ -614,7 +791,7 @@ footer {
         background: #FFFFFF;
     }
 
-    /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+    /* 
     .navbar {
         position: absolute;
         width: 100%;
@@ -623,6 +800,7 @@ footer {
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
+     */
 
    /* Gallery */
     .gallery {
@@ -631,10 +809,10 @@ footer {
         }
     }
 
-    /* Facts Counter */
-    .facts {
+    /* Feature */
+    .feature {
         position: relative;
-        margin-top: -75px;
+        margin-top: -115px;
         z-index: 1;
     }
 
@@ -642,109 +820,4 @@ footer {
     .footer {
         padding: 30px 0;
     }
-}
-
-/* Theme Switcher (Dark Mode) */
-/* Dark Theme Variables */
-$dark-bg-color: #121212; // Background color for dark mode
-$dark-text-color: #ffffff; // Text color for dark mode
-$dark-light-bg-color: #1e1e1e; // Light background color for dark mode
-$dark-shadow-color: #333333; // Darker shadow color for dark mode
-
-body.dark-mode {
-  /* Override styles for dark mode */
-  background-color: $dark-bg-color;
-  color: $dark-text-color;
-
-  .bg-white {
-    background-color: $dark-bg-color !important;
-  }
-
-  .text-dark {
-    color: $dark-text-color !important;
-  }
-
-  .bg-light {
-    background-color: $dark-light-bg-color !important;
-  }
-
-  .shadow {
-    box-shadow: 0 0 30px $dark-shadow-color !important; // Darker shadow color for dark mode
-  }
-
-  .btn-outline-dark {
-    color: $dark-text-color !important;
-    border-color: $dark-text-color !important;
-  }
-
-  /* Common Section Styles for Dark Mode */
-  .navbar,
-  footer,
-  .carousel-caption,
-  .testimonial-item,
-  .service-item,
-  .gallery .box,
-  .team-item,
-  .blog-item {
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-  }
-
-  /* Testimonial Carousel for Dark Mode */
-  .testimonial-carousel {
-    .owl-item.center .testimonial-item {
-      background-color: $dark-bg-color !important;
-      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
-    }
-  }
-
-  /* Team Section for Dark Mode */
-  .team-item {
-    &:hover {
-      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
-    }
-  }
-
-  /* Form Controls for Dark Mode */
-  .form-control,
-  .form-select {
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-    
-    &::placeholder {
-      color: $dark-text-color; // Placeholder text color for dark mode
-    }
-  }
-
-  /* Blog Pagination for Dark Mode */
-  .page-link {
-    background-color: $dark-bg-color !important;
-    
-    &:active {
-      background-color: #06A3DA; // Highlight color for active state
-    }
-  }
-
-  /* Sticky Top Navbar for Dark Mode */
-  .sticky-top.navbar {
-    .navbar-nav {
-      .nav-link {
-        color: $dark-text-color;
-      }
-    }
-  }
-
-  /* Responsive Styles for Dark Mode (Smartphones and Tablets) */
-  @media (max-width: 991.98px) {
-    .navbar {
-      .navbar-nav {
-        .nav-link {
-          &,
-          &.show {
-            color: $dark-text-color;
-          }
-        }
-      }
-    }
-  }
 }

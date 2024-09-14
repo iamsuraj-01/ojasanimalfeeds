@@ -1,29 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Manrope", sans-serif; /* Set "Manrope" as the default font family */
 }
 
 /* Theme Variables */
 /* Background Colors */
 .bg-theme {
-  background: #06A3DA;
+  background: #28a745;
 }
 
 .bg-secondary-theme {
-  background: #0b5ed7;
+  background: #218838;
 }
 
 /* Text Colors */
 .text-theme {
-  color: #06A3DA;
+  color: #28a745;
 }
 
 .text-secondary-theme {
-  color: #0b5ed7;
+  color: #218838;
 }
 
 /* Text Alignment */
@@ -100,13 +100,13 @@ a {
 
 .btn-theme {
   color: #FFFFFF;
-  background-color: #06A3DA;
-  border-color: #06A3DA;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 .btn-theme:hover {
   color: #FFFFFF;
-  background-color: #0b5ed7;
-  border-color: #0b5ed7;
+  background-color: #218838;
+  border-color: #218838;
 }
 
 .btn-square, .btn-sm-square, .btn-lg-square {
@@ -130,6 +130,27 @@ a {
   height: 48px;
 }
 
+/* Border Radius Classes */
+.border-radius-sm {
+  border-radius: 4px; /* Small border radius */
+}
+
+.border-radius-md {
+  border-radius: 8px; /* Medium border radius */
+}
+
+.border-radius-lg {
+  border-radius: 12px; /* Large border radius */
+}
+
+.border-radius-xl {
+  border-radius: 16px; /* Extra large border radius */
+}
+
+.border-radius-circle {
+  border-radius: 50%; /* Full circle for round elements */
+}
+
 /* Back To Top Button */
 .back-to-top {
   position: fixed;
@@ -148,7 +169,7 @@ a {
 .spinner {
   width: 40px;
   height: 40px;
-  background: #06A3DA;
+  background: #28a745;
   margin: 100px auto;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
@@ -195,7 +216,7 @@ a {
   height: 3px;
   bottom: 0;
   left: 0; /* Start from the left */
-  background: #06A3DA;
+  background: #28a745;
   border-radius: 2px;
 }
 .section-title.text-center::before {
@@ -210,7 +231,7 @@ a {
   box-shadow: inset 0 0 0 50px transparent;
 }
 .hover-fill:hover {
-  box-shadow: inset 0 0 0 0 #06A3DA;
+  box-shadow: inset 0 0 0 0 #28a745;
 }
 
 /* Zoom In Effect */
@@ -223,7 +244,7 @@ a {
 
 /* Navbar */
 .navbar .navbar-brand img {
-  width: 65px;
+  width: 150px;
   height: auto;
   max-width: 100%;
   pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -232,28 +253,28 @@ a {
   position: relative;
   margin-left: 25px;
   padding: 35px 0;
-  color: #FFFFFF;
+  color: #212529;
   font-size: 18px;
   font-weight: 600;
   outline: none;
   transition: 0.5s;
 }
 .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
-  color: #06A3DA;
+  color: #28a745;
 }
 .navbar .navbar-nav .show > .nav-link {
-  color: #06A3DA;
+  color: #28a745;
 }
 .navbar .navbar-toggler {
-  color: #06A3DA !important;
-  border-color: #06A3DA !important;
+  color: #28a745 !important;
+  border-color: #28a745 !important;
 }
 .navbar .dropdown-menu {
   padding: 0;
   border-radius: 0;
 }
 .navbar .dropdown-menu .dropdown-item {
-  background-color: #06A3DA;
+  background-color: #28a745;
   color: #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
   text-align: center;
@@ -261,12 +282,12 @@ a {
   transition: 0.5s;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #0b5ed7;
+  background-color: #218838;
   color: #FFFFFF;
 }
 .navbar .dropdown-menu .dropdown-item.active, .navbar .dropdown-menu .dropdown-item:active {
   color: #FFFFFF;
-  background-color: #0b5ed7;
+  background-color: #218838;
 }
 
 .sticky-top.navbar .navbar-nav .nav-link {
@@ -274,7 +295,7 @@ a {
   color: #212529;
 }
 .sticky-top.navbar .navbar-nav .nav-link:hover, .sticky-top.navbar .navbar-nav .nav-link.active {
-  color: #06A3DA;
+  color: #28a745;
 }
 
 /* Footer */
@@ -295,13 +316,14 @@ footer .link-animated a:hover {
 }
 
 /* Landing Page Start */
-/* Carousel */
+/* Carousel Styles */
+/* Carousel Styles */
 .carousel .carousel-inner .carousel-item {
   position: relative;
 }
 .carousel .carousel-inner .carousel-item img {
   width: 100%;
-  height: 800px;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -311,34 +333,162 @@ footer .link-animated a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(9, 30, 62, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 .carousel .carousel-inner .carousel-item .carousel-caption {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 5%;
+  transform: translateY(-50%);
   z-index: 2;
-  width: 50%;
-  padding: 0 15px;
-}
-.carousel .carousel-inner .carousel-item .carousel-caption h1 {
-  font-size: 2.8rem;
+  max-width: 40%;
 }
 .carousel .carousel-inner .carousel-item .carousel-caption p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
-.carousel .carousel-control-prev,
+.carousel .carousel-inner .carousel-item .carousel-caption h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption .btn {
+  margin-top: 20px;
+  background-color: #28a745;
+  border: none;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption .btn:hover {
+  background-color: #218838;
+}
+.carousel .custom-control {
+  position: absolute;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+.carousel .custom-control:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.carousel .carousel-control-prev {
+  top: calc(50% - 35px);
+  right: 30px;
+  left: auto;
+}
 .carousel .carousel-control-next {
-  z-index: auto;
+  top: calc(50% + 35px);
+  right: 30px;
+  left: auto;
 }
-.carousel .carousel-control-prev .carousel-control-prev-icon,
-.carousel .carousel-control-prev .carousel-control-next-icon,
-.carousel .carousel-control-next .carousel-control-prev-icon,
-.carousel .carousel-control-next .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  background-size: 12px 12px;
+  background-color: transparent;
+}
+
+.feature {
+  /* Icon Flip Effect */
+  /* Front Icon */
+  /* Back Icon */
+}
+.feature .icon-box {
+  perspective: 1000px; /* Enable 3D space for flipping effect */
+  position: absolute;
+  bottom: -50px; /* Adjust to move the icon to the bottom edge */
+}
+.feature .icon-flip {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.feature .icon-flip-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.feature .icon-flip:hover .icon-flip-inner {
+  transform: rotateY(180deg);
+}
+.feature .icon-front,
+.feature .icon-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.feature .icon-front {
+  transform: rotateY(0deg);
+}
+.feature .icon-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.introduction-section {
+  /* Main Image Section */
+  /* Right Content Section */
+}
+.introduction-section .container {
+  position: relative;
+}
+.introduction-section .main-image {
+  position: relative;
+  z-index: 1; /* Base layer for the main image */
+}
+.introduction-section .main-image .main-img {
+  width: 100%;
+  height: auto;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensure relative positioning for child elements */
+}
+.introduction-section p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2rem;
+}
+.introduction-section h2 {
+  font-family: "Manrope", sans-serif;
+  color: #333;
+}
+.introduction-section h4 {
+  font-family: "Manrope", sans-serif;
+  color: #28a745; /* Green color */
+}
+.introduction-section .icon-feature {
+  font-size: 1.1rem;
+  color: #666;
+}
+.introduction-section .icon-feature i {
+  font-size: 1.5rem;
+}
+.introduction-section ul {
+  font-family: "Manrope", sans-serif;
+}
+.introduction-section ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.introduction-section .btn {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 4px;
 }
 
 /* Banner */
@@ -361,7 +511,7 @@ footer .link-animated a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #06A3DA;
+  background: #28a745;
   border-radius: 2px;
   transform: rotate(-45deg);
 }
@@ -456,7 +606,7 @@ footer .link-animated a:hover {
 }
 .testimonial-carousel .owl-dot.active {
   width: 30px;
-  background: #06A3DA;
+  background: #28a745;
 }
 .testimonial-carousel .owl-item.center {
   position: relative;
@@ -503,8 +653,9 @@ footer .link-animated a:hover {
   .carousel .carousel-inner .carousel-item .carousel-caption {
     width: 90%;
     min-height: 350px;
-    left: 50%;
+    left: 0%;
     padding: 0 10px;
+    max-width: 100%;
   }
   .carousel .carousel-inner .carousel-item .carousel-caption h1 {
     font-size: 1.5rem;
@@ -526,101 +677,28 @@ footer .link-animated a:hover {
     width: 100%;
     background: #FFFFFF;
   }
-  /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+  /* 
   .navbar {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 999;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid rgba(256, 256, 256, .1);
+      z-index: 999;
   }
+   */
   /* Gallery */
   .gallery .box {
     margin: -15px;
   }
-  /* Facts Counter */
-  .facts {
+  /* Feature */
+  .feature {
     position: relative;
-    margin-top: -75px;
+    margin-top: -115px;
     z-index: 1;
   }
   /* Footer */
   .footer {
     padding: 30px 0;
-  }
-}
-/* Theme Switcher (Dark Mode) */
-/* Dark Theme Variables */
-body.dark-mode {
-  /* Override styles for dark mode */
-  background-color: #121212;
-  color: #ffffff;
-  /* Common Section Styles for Dark Mode */
-  /* Testimonial Carousel for Dark Mode */
-  /* Team Section for Dark Mode */
-  /* Form Controls for Dark Mode */
-  /* Blog Pagination for Dark Mode */
-  /* Sticky Top Navbar for Dark Mode */
-  /* Responsive Styles for Dark Mode (Smartphones and Tablets) */
-}
-body.dark-mode .bg-white {
-  background-color: #121212 !important;
-}
-body.dark-mode .text-dark {
-  color: #ffffff !important;
-}
-body.dark-mode .bg-light {
-  background-color: #1e1e1e !important;
-}
-body.dark-mode .shadow {
-  box-shadow: 0 0 30px #333333 !important;
-}
-body.dark-mode .btn-outline-dark {
-  color: #ffffff !important;
-  border-color: #ffffff !important;
-}
-body.dark-mode .navbar,
-body.dark-mode footer,
-body.dark-mode .carousel-caption,
-body.dark-mode .testimonial-item,
-body.dark-mode .service-item,
-body.dark-mode .gallery .box,
-body.dark-mode .team-item,
-body.dark-mode .blog-item {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode .testimonial-carousel .owl-item.center .testimonial-item {
-  background-color: #121212 !important;
-  box-shadow: 0 0 30px #333333;
-}
-body.dark-mode .team-item:hover {
-  box-shadow: 0 0 30px #333333;
-}
-body.dark-mode .form-control,
-body.dark-mode .form-select {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode .form-control::-moz-placeholder, body.dark-mode .form-select::-moz-placeholder {
-  color: #ffffff;
-}
-body.dark-mode .form-control::placeholder,
-body.dark-mode .form-select::placeholder {
-  color: #ffffff;
-}
-body.dark-mode .page-link {
-  background-color: #121212 !important;
-}
-body.dark-mode .page-link:active {
-  background-color: #06A3DA;
-}
-body.dark-mode .sticky-top.navbar .navbar-nav .nav-link {
-  color: #ffffff;
-}
-@media (max-width: 991.98px) {
-  body.dark-mode .navbar .navbar-nav .nav-link, body.dark-mode .navbar .navbar-nav .nav-link.show {
-    color: #ffffff;
   }
 }/*# sourceMappingURL=main.css.map */
