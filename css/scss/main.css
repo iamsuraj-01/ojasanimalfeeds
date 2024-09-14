@@ -244,7 +244,7 @@ a {
 
 /* Navbar */
 .navbar .navbar-brand img {
-  width: 150px;
+  width: 80px;
   height: auto;
   max-width: 100%;
   pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -316,7 +316,6 @@ footer .link-animated a:hover {
 }
 
 /* Landing Page Start */
-/* Carousel Styles */
 /* Carousel Styles */
 .carousel .carousel-inner .carousel-item {
   position: relative;
@@ -403,7 +402,7 @@ footer .link-animated a:hover {
 .feature .icon-box {
   perspective: 1000px; /* Enable 3D space for flipping effect */
   position: absolute;
-  bottom: -50px; /* Adjust to move the icon to the bottom edge */
+  bottom: -60px; /* Adjust to move the icon to the bottom edge */
 }
 .feature .icon-flip {
   width: 80px;
@@ -441,54 +440,78 @@ footer .link-animated a:hover {
   left: 0;
 }
 
-.introduction-section {
+#about .introduction-section {
   /* Main Image Section */
   /* Right Content Section */
 }
-.introduction-section .container {
+#about .introduction-section .container {
   position: relative;
 }
-.introduction-section .main-image {
+#about .introduction-section .main-image {
   position: relative;
   z-index: 1; /* Base layer for the main image */
 }
-.introduction-section .main-image .main-img {
+#about .introduction-section .main-image .main-img {
   width: 100%;
   height: auto;
   border: 5px solid #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative; /* Ensure relative positioning for child elements */
 }
-.introduction-section p {
+#about .introduction-section p {
   font-family: "Manrope", sans-serif;
   font-size: 1.2rem;
 }
-.introduction-section h2 {
+#about .introduction-section h2 {
   font-family: "Manrope", sans-serif;
   color: #333;
 }
-.introduction-section h4 {
+#about .introduction-section h4 {
   font-family: "Manrope", sans-serif;
   color: #28a745; /* Green color */
 }
-.introduction-section .icon-feature {
+#about .introduction-section .icon-feature {
   font-size: 1.1rem;
   color: #666;
 }
-.introduction-section .icon-feature i {
+#about .introduction-section .icon-feature i {
   font-size: 1.5rem;
 }
-.introduction-section ul {
+#about .introduction-section ul {
   font-family: "Manrope", sans-serif;
 }
-.introduction-section ul li {
+#about .introduction-section ul li {
   font-size: 1rem;
   line-height: 1.6;
 }
-.introduction-section .btn {
+#about .introduction-section .btn {
   font-family: "Manrope", sans-serif;
   font-size: 1.1rem;
   border-radius: 4px;
+}
+
+#services .text-theme {
+  color: #28a745;
+}
+#services .service-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#services .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+#services .service-card .card-body .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+#services .service-card .card-body .btn-outline-theme {
+  color: #28a745;
+  border-color: #28a745;
+}
+#services .service-card .card-body .btn-outline-theme:hover {
+  color: #FFFFFF;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
 /* Banner */
